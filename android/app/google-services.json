@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "501961346817",
+    "project_id": "vibes-f2e63",
+    "storage_bucket": "vibes-f2e63.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501961346817:android:ced0e9fb177ab10aaf5500",
+        "android_client_info": {
+          "package_name": "com.example.vibes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501961346817-fg7ti2h429tg6u56dpj0vnsbvthptpdn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vibes",
+            "certificate_hash": "ba6a0de9709a675319d137f3e50034c9ea7c6907"
+          }
+        },
+        {
+          "client_id": "501961346817-ortghc1nihobti60bcm7b3mqmspq43e9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgscVr2R9vDrHupSacYvlC6saS7j7XRVk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501961346817-ortghc1nihobti60bcm7b3mqmspq43e9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
