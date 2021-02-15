@@ -1,9 +1,11 @@
 import 'dart:convert';
 
 import 'package:age/age.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:vibes/config/AppLocalizations.dart';
+import 'package:vibes/src/models/MarkedText.dart';
+import 'package:vibes/utils/Validators.dart';
 
 class Helpers {
   /// Converts JWT String Token into a Map
@@ -224,6 +226,56 @@ class Helpers {
       }
     } catch (e) {
       return null;
+    }
+  }
+
+  /// Identifies urls in the passed text, and returns a list of strings
+  ///
+  /// Eg: input: "Hello world www.google.com im here!"
+  ///
+  /// output: [
+  /// "Hello world ",
+  /// "www.google.com",
+  /// " im here!"
+  /// ]
+  static List<MarkedText> markText(String description) {
+    try {
+      List<MarkedText> markedText = [];
+
+      RegExp _urlRegExp = Validators.multilineUrlRegex;
+
+      if (description != null && description.length != 0) {
+        List<RegExpMatch> list = _urlRegExp.allMatches(description).toList();
+
+        if (list.length > 0) {
+          String textSpan = description.substring(0, list[0].start);
+          markedText.add(new MarkedText(textSpan, TextMark.text));
+
+          for (int i = 0; i < list.length; i++) {
+            textSpan = description.substring(list[i].start, list[i].end);
+
+            // Check for all urls
+            if (_urlRegExp.hasMatch(textSpan)) {
+              markedText.add(new MarkedText(textSpan, TextMark.url));
+            }
+
+            // Add the rest of text after the Text marking
+            if (i + 1 < list.length) {
+              textSpan = description.substring(list[i].end, list[i + 1].start);
+              markedText.add(new MarkedText(textSpan, TextMark.text));
+            } else {
+              textSpan = description.substring(list[i].end);
+              markedText.add(new MarkedText(textSpan, TextMark.text));
+            }
+          }
+        } else {
+          markedText.add(new MarkedText(description, TextMark.text));
+        }
+      }
+
+      return markedText;
+    } catch (e) {
+      return [];
     }
   }
 }
