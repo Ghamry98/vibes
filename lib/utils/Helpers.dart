@@ -278,4 +278,10 @@ class Helpers {
       return [];
     }
   }
+
+  /// Checks whether the current theme is the light one or not.
+  static bool isLightThemeSet(BuildContext context) {
+    final theme = Theme.of(context);
+    return theme.brightness == Brightness.light;
+  }
 }

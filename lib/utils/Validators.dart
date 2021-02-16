@@ -3,7 +3,7 @@ import 'package:vibes/config/AppLocalizations.dart';
 
 class Validators {
   // Validation attributes
-  static final int _postTitleMaxLength = 280; // 280 characters
+  static final int postTitleMaxLength = 280; // 280 characters
   static final int _maxFileSize = 50 * 1024 * 1024; // 50 MB
 
   // Supported file formats
@@ -135,7 +135,7 @@ class Validators {
   static String postTitleValidator(String value) {
     if (value != null &&
         value.isNotEmpty &&
-        value.length <= _postTitleMaxLength) {
+        value.length <= postTitleMaxLength) {
       return null;
     }
 

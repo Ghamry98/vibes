@@ -7,6 +7,7 @@ class Constants {
 
   // Shared Prefs Keys
   static const String languageKey = "LANGUAGE";
+  static const String themeKey = "THEME";
   static const String countryKey = "COUNTRY";
   static const String tokenKey = "TOKEN";
 
