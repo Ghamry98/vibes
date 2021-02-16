@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:vibes/config/ThemeColors.dart';
 
 class Themes {
+  /// Returns the main app light theme.
   static ThemeData get lightTheme => ThemeData(
         fontFamily: 'Montserrat',
         brightness: Brightness.light,
@@ -80,14 +81,14 @@ class Themes {
           ),
         ),
         buttonTheme: ButtonThemeData(
-          disabledColor: ThemeColors.inactiveColor(1),
           buttonColor: ThemeColors.blueColor(1),
+          disabledColor: ThemeColors.inactiveColor(1),
         ),
         appBarTheme: AppBarTheme(color: ThemeColors.scaffoldColor(1)),
         iconTheme: IconThemeData(color: ThemeColors.textPrimaryColor(1)),
         tooltipTheme: TooltipThemeData(
-          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 10),
           margin: EdgeInsets.symmetric(horizontal: 40),
+          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 10),
           decoration: BoxDecoration(
             color: ThemeColors.blueColor(1),
             borderRadius: BorderRadius.circular(8),
@@ -99,15 +100,16 @@ class Themes {
             fontSize: 14.0,
             fontWeight: FontWeight.w600,
           ),
-          unselectedLabelColor: ThemeColors.focusColor(1),
           labelColor: ThemeColors.redColor(1),
+          unselectedLabelColor: ThemeColors.focusColor(1),
         ),
         cupertinoOverrideTheme: CupertinoThemeData(
-          barBackgroundColor: ThemeColors.textPrimaryColor(1),
           primaryColor: ThemeColors.redColor(1),
+          barBackgroundColor: ThemeColors.textPrimaryColor(1),
         ),
       );
 
+  /// Returns the main app dark theme.
   static ThemeData get darkTheme => ThemeData(
         fontFamily: 'Montserrat',
         brightness: Brightness.dark,
@@ -185,14 +187,14 @@ class Themes {
           ),
         ),
         buttonTheme: ButtonThemeData(
-          disabledColor: ThemeColors.inactiveDarkColor(1),
           buttonColor: ThemeColors.blueColor(1),
+          disabledColor: ThemeColors.inactiveDarkColor(1),
         ),
         appBarTheme: AppBarTheme(color: ThemeColors.scaffoldDarkColor(1)),
         iconTheme: IconThemeData(color: ThemeColors.textPrimaryColor(1)),
         tooltipTheme: TooltipThemeData(
-          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 10),
           margin: EdgeInsets.symmetric(horizontal: 40),
+          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 10),
           decoration: BoxDecoration(
             color: ThemeColors.blueColor(1),
             borderRadius: BorderRadius.circular(8),
@@ -204,12 +206,12 @@ class Themes {
             fontSize: 14.0,
             fontWeight: FontWeight.w600,
           ),
-          unselectedLabelColor: ThemeColors.textSecondaryDarkColor(1),
           labelColor: ThemeColors.redColor(1),
+          unselectedLabelColor: ThemeColors.textSecondaryDarkColor(1),
         ),
         cupertinoOverrideTheme: CupertinoThemeData(
-          barBackgroundColor: ThemeColors.inactiveDarkColor(1),
           primaryColor: ThemeColors.redColor(1),
+          barBackgroundColor: ThemeColors.inactiveDarkColor(1),
         ),
       );
 }
