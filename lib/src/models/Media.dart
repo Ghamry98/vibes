@@ -17,6 +17,12 @@ class Media {
   // Constructors
   Media.basic(this.localFile);
   Media.localFile(this.localFile, this.type);
+  Media.image(this.url) {
+    this.type = MediaType.image;
+  }
+  Media.video(this.url) {
+    this.type = MediaType.video;
+  }
   Media(this.url, this.type);
 
   // Mapping
