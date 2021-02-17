@@ -1,8 +1,11 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:age/age.dart';
+import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:path/path.dart';
 import 'package:vibes/config/AppLocalizations.dart';
 import 'package:vibes/src/models/MarkedText.dart';
 import 'package:vibes/utils/Validators.dart';
@@ -283,5 +286,41 @@ class Helpers {
   static bool isLightThemeSet(BuildContext context) {
     final theme = Theme.of(context);
     return theme.brightness == Brightness.light;
+  }
+
+  /// Returns the file name on the device.
+  static String getFileName(File file) {
+    try {
+      return file != null ? basename(file.path) : "";
+    } catch (e) {
+      return "";
+    }
+  }
+
+  /// Returns the actual file size on the device.
+  static int getFileSize(File file) {
+    try {
+      return file != null ? file.lengthSync() : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  /// Returns the file extension.
+  static getFileExtension(String fileName) {
+    try {
+      return fileName.split(".")[1];
+    } catch (e) {
+      return null;
+    }
+  }
+
+  /// Takes the file size in bytes and returns a formatted file size (Byte, KB, MB, GB, TB, and PB).
+  static formatFileSize(int fileSize) {
+    try {
+      return fileSize != null ? filesize(fileSize) : null;
+    } catch (e) {
+      return null;
+    }
   }
 }

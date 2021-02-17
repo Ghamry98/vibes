@@ -146,21 +146,29 @@ class Validators {
   ///
   /// Maximum is 50 MB.
   static bool validateFileSize(int fileSize) {
-    if (fileSize <= _maxFileSize) {
-      return true;
+    try {
+      if (fileSize <= _maxFileSize) {
+        return true;
+      }
+      return false;
+    } catch (e) {
+      return false;
     }
-    return false;
   }
 
   /// Validates the extension of a file.
   ///
   /// Supported formats: mp4, jpg, jpeg, png.
   static bool validateFileExtension(String fileExtension) {
-    if (validateImageExtension(fileExtension) ||
-        validateVideoExtension(fileExtension)) {
-      return true;
+    try {
+      if (validateImageExtension(fileExtension) ||
+          validateVideoExtension(fileExtension)) {
+        return true;
+      }
+      return false;
+    } catch (e) {
+      return false;
     }
-    return false;
   }
 
   /// Validates the extension of an image.
