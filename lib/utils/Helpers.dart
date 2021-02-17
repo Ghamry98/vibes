@@ -323,4 +323,24 @@ class Helpers {
       return null;
     }
   }
+
+  /// Returns a string containing the first letter of the first two words in the user name (if exists).
+  ///
+  /// If the user name consists of one word, it will return only the first character of that word.
+  static getUserNickname(String name) {
+    try {
+      List<String> splittedName = name.split(" ");
+      String nickname = "";
+
+      for (int i = 0; i < splittedName.length; i++) {
+        if (i == 2) {
+          break;
+        }
+        nickname += splittedName[i][0];
+      }
+      return nickname;
+    } catch (e) {
+      return "";
+    }
+  }
 }
