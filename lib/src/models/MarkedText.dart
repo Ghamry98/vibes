@@ -1,3 +1,4 @@
+/// Identifies the type of the text.
 enum TextMark { text, url, tag }
 
 class MarkedText {
