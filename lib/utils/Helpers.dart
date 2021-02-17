@@ -326,7 +326,7 @@ class Helpers {
 
   /// Returns a string containing the first letter of the first two words in the user name (if exists).
   ///
-  /// If the user name consists of one word, it will return only the first character of that word.
+  /// If the user name consists of only one word, it will return only the first character of that word.
   static getUserNickname(String name) {
     try {
       List<String> splittedName = name.split(" ");
