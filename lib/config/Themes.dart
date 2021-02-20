@@ -17,6 +17,7 @@ class Themes {
         dividerColor: ThemeColors.dividerColor(1),
         hintColor: ThemeColors.textPrimaryColor(1),
         secondaryHeaderColor: ThemeColors.textSecondaryColor(1),
+        buttonColor: ThemeColors.blueColor(1),
         textTheme: TextTheme(
           button: TextStyle(
             color: Colors.white,
@@ -123,6 +124,7 @@ class Themes {
         dividerColor: ThemeColors.dividerDarkColor(1),
         hintColor: ThemeColors.textPrimaryDarkColor(1),
         secondaryHeaderColor: ThemeColors.textSecondaryDarkColor(1),
+        buttonColor: ThemeColors.blueColor(1),
         textTheme: TextTheme(
           button: TextStyle(
             color: Colors.white,
