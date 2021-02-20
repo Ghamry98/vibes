@@ -1,5 +1,5 @@
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:vibes/config/Router.dart';
+import 'package:vibes/config/Router.dart' as config;
 import 'package:vibes/config/Themes.dart';
 import 'package:flutter/material.dart';
 import 'package:vibes/src/providers/UserProvider.dart';
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
             child: MaterialApp(
               title: 'Vibes',
               initialRoute: '/',
-              onGenerateRoute: Router.generateRoute,
+              onGenerateRoute: config.Router.generateRoute,
               debugShowCheckedModeBanner: false,
               theme: Themes.lightTheme,
               darkTheme: Themes.darkTheme,
